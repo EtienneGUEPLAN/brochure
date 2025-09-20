@@ -1,0 +1,243 @@
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+
+/* Variables converted to CSS custom properties */
+:root {
+  --button-width: 220px;
+  --button-height: 70px;
+  --button-border: 4px;
+  --violet: #6559ae;
+  --orange: #ff7159;
+  --deg: 120deg;
+  --size: 400%;
+  --dur: 3s;
+}
+
+/* Button styling */
+.cyber-button {
+  display: block;
+  position: relative;
+  width: var(--button-width);
+  height: var(--button-height);
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 70px;
+  font-family: 'Squada One', cursive;
+  font-size: 28px;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.cyber-button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: linear-gradient(var(--deg), var(--violet), var(--orange), var(--violet));
+  background-size: var(--size) var(--size);
+  -webkit-clip-path: polygon(
+    0% 100%, 
+    var(--button-border) 100%, 
+    var(--button-border) var(--button-border), 
+    calc(var(--button-width) - var(--button-border)) var(--button-border), 
+    calc(var(--button-width) - var(--button-border)) calc(var(--button-height) - var(--button-border)), 
+    var(--button-border) calc(var(--button-height) - var(--button-border)), 
+    var(--button-border) 100%, 
+    100% 100%, 
+    100% 0%, 
+    0% 0%
+  );
+  clip-path: polygon(
+    0% 100%, 
+    var(--button-border) 100%, 
+    var(--button-border) var(--button-border), 
+    calc(var(--button-width) - var(--button-border)) var(--button-border), 
+    calc(var(--button-width) - var(--button-border)) calc(var(--button-height) - var(--button-border)), 
+    var(--button-border) calc(var(--button-height) - var(--button-border)), 
+    var(--button-border) 100%, 
+    100% 100%, 
+    100% 0%, 
+    0% 0%
+  );
+  animation: gradient var(--dur) ease-in-out infinite, border 1s forwards ease-in-out reverse;
+}
+
+.cyber-button > span {
+  display: block;
+  background: linear-gradient(var(--deg), var(--violet), var(--orange), var(--violet));
+  background-size: var(--size) var(--size);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient var(--dur) ease-in-out infinite;
+}
+
+/* Helpers */
+.absolute-centering {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.text-formatting {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 70px;
+  font-family: 'Squada One', cursive;
+  font-size: 28px;
+}
+
+/* Animations */
+@keyframes gradient {
+  0% { 
+    background-position: 14% 0%; 
+  }
+  50% { 
+    background-position: 87% 100%; 
+  }
+  100% { 
+    background-position: 14% 0%; 
+  }
+}
+
+@keyframes border {
+  0% { 
+    -webkit-clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) calc(var(--button-height) - var(--button-border)), 
+      var(--button-border) calc(var(--button-height) - var(--button-border)), 
+      var(--button-border) 100%, 
+      100% 100%, 
+      100% 0%, 
+      0% 0%
+    );
+    clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) calc(var(--button-height) - var(--button-border)), 
+      var(--button-border) calc(var(--button-height) - var(--button-border)), 
+      var(--button-border) 100%, 
+      100% 100%, 
+      100% 0%, 
+      0% 0%
+    );
+  }
+  25% { 
+    -webkit-clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) calc(var(--button-height) - var(--button-border)), 
+      calc(var(--button-width) - var(--button-border)) calc(var(--button-height) - var(--button-border)), 
+      calc(var(--button-width) - var(--button-border)) 100%, 
+      100% 100%, 
+      100% 0%, 
+      0% 0%
+    );
+    clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) calc(var(--button-height) - var(--button-border)), 
+      calc(var(--button-width) - var(--button-border)) calc(var(--button-height) - var(--button-border)), 
+      calc(var(--button-width) - var(--button-border)) 100%, 
+      100% 100%, 
+      100% 0%, 
+      0% 0%
+    );
+  }
+  50% { 
+    -webkit-clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      100% 0%, 
+      0% 0%
+    );
+    clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      calc(var(--button-width) - var(--button-border)) var(--button-border), 
+      100% 0%, 
+      0% 0%
+    );
+  }
+  75% { 
+    -webkit-clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) 0%, 
+      0% 0%
+    );
+    clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) var(--button-border), 
+      var(--button-border) 0%, 
+      0% 0%
+    );
+  }
+  100% { 
+    -webkit-clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      0% 100%
+    );
+    clip-path: polygon(
+      0% 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      var(--button-border) 100%, 
+      0% 100%
+    );
+  }
+}
